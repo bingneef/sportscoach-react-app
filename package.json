@@ -1,17 +1,28 @@
 {
-  "name": "app-react",
+  "name": "Sportscoach",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0",
-    "react-scripts": "2.1.1"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "yarn build && yarn now && yarn now alias",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build:storybook": "build-storybook -s public",
+    "deploy:storybook": "yarn build:storybook && now storybook-static --public"
+  },
+  "dependencies": {
+    "@material-ui/core": "^3.3.2",
+    "immer-wieder": "^1.2.1",
+    "node-sass": "^4.9.4",
+    "react": "^16.7.0-alpha.0",
+    "react-bulma-components": "^2.2.0",
+    "react-dom": "^16.7.0-alpha.0",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.1.1",
+    "styled-components": "^4.0.3",
+    "use-immer": "^0.0.5"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -21,5 +32,15 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@storybook/addon-actions": "^4.0.2",
+    "@storybook/addon-links": "^4.0.2",
+    "@storybook/addons": "^4.0.2",
+    "@storybook/react": "^4.0.2",
+    "babel-loader": "^8.0.4",
+    "now": "^11.5.0",
+    "serve": "^10.0.2"
+  }
 }
